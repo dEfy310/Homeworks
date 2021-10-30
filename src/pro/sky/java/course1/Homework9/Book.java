@@ -1,5 +1,7 @@
 package pro.sky.java.course1.Homework9;
+
 import java.util.Objects;
+
 public class Book {
     private final String bookName;
     private int releaseYear;

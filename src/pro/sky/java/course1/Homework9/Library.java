@@ -7,12 +7,12 @@ public class Library {
         this.library = new Book[range];
     }
 
-    public void getBookInfo(Book[] books) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] != null) {
-                System.out.print("\n" + books[i].getAuthorName().getFirstName() + " " + books[i].getAuthorName().getMiddleName() + ": ");
-                System.out.print(books[i].getBookName() + ": ");
-                System.out.print(books[i].getReleaseYear() + "\n");
+    public void getBookInfo() {
+        for (Book book : library) {
+            if (book != null) {
+                System.out.print("\n" + book.getAuthorName().getFirstName() + " " + book.getAuthorName().getMiddleName() + ": ");
+                System.out.print(book.getBookName() + ": ");
+                System.out.print(book.getReleaseYear() + "\n");
             }
         }
 
@@ -25,18 +25,21 @@ public class Library {
                 return;
             }
         }
+        System.out.println("Ошибка при добавлении книги!");
     }
 
     public void getBookInfo(String bookName) {
-        for (int i = 0; i < library.length; i++) {
-            if (library[i] == null) {
-                continue;}
-            if (bookName.equals(library[i].getBookName())) {
-                System.out.println("\n" + library[i].getBookName() + " by " + library[i].getAuthorName().getFirstName() + " " +
-                        library[i].getAuthorName().getMiddleName() + " was published in " + library[i].getReleaseYear());
+        for (Book book : library) {
+            if (book == null) {
+                continue;
+            }
+            if (bookName.equals(book.getBookName())) {
+                System.out.println("\n" + book.getBookName() + " by " + book.getAuthorName().getFirstName() + " " +
+                        book.getAuthorName().getMiddleName() + " was published in " + book.getReleaseYear());
                 return;
             }
         }
+        System.out.println("Book not found!");
     }
 
     public void setPublishingYear(String bookName, int yearOfRelease) {
@@ -48,13 +51,14 @@ public class Library {
                 return;
             }
         }
+        System.out.println("Ошибка при изменении года публикации!");
     }
 
     @Override
     public String toString() {
         StringBuilder books = new StringBuilder();
-        for (int i = 0; i < library.length; i++) {
-            books.append(library[i] + "\n");
+        for (Book book : library) {
+            books.append(book).append("\n");
         }
         return "Library: " + "\n" + books;
     }
