@@ -1,6 +1,8 @@
 package pro.sky.java.course1.Homework8;
 
 public class Homework8 {
+    private static Book[] books = new Book[5];
+
     public static void main(String[] args) {
         Author fedorDostoevsky = new Author("Fedor", "Dostoevsky");
         Book idiot = new Book("Idiot", fedorDostoevsky, 1869);
@@ -13,8 +15,6 @@ public class Homework8 {
 
         tarasBulba.setReleaseYear(1920);
 
-
-        Book[] books = new Book[5];
         books[0] = idiot;
         books[1] = tarasBulba;
 
@@ -28,6 +28,8 @@ public class Homework8 {
         System.out.println("");
         book.getBookInfo("Idiot");
         book.setPublishingYear("Taras Bulba", 1883);
+        book.getBookInfo("Kolobok");
+        book.getBookInfo();
     }
 
     public static void appendNewBook(Book[] library, Book book) {
