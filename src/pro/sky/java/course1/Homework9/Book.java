@@ -1,4 +1,6 @@
-package pro.sky.java.course1.Homework8;
+package pro.sky.java.course1.Homework9;
+
+import java.util.Objects;
 
 public class Book {
     private final String bookName;
@@ -26,4 +28,24 @@ public class Book {
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
+
+    @Override
+    public String toString() {
+        return "Book: " + bookName + " by " + authorName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return releaseYear == book.releaseYear && bookName.equals(book.bookName) && authorName.equals(book.authorName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookName, releaseYear, authorName);
+    }
 }
+
+
