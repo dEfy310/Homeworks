@@ -7,7 +7,7 @@ public class Library {
         this.library = new Book[size];
     }
 
-    public void getBookInfo() {
+    public void printBookInfo() {
         for (Book book : library) {
             if (book != null) {
                 System.out.print("\n" + book.getAuthorName().getFirstName() + " " + book.getAuthorName().getMiddleName() + ": ");
