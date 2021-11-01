@@ -29,7 +29,7 @@ public class Homework8 {
         book.getBookInfo("Idiot");
         book.setPublishingYear("Taras Bulba", 1883);
         book.getBookInfo("Kolobok");
-        book.getBookInfo();
+        book.printBookInfo();
     }
 
     public static void appendNewBook(Book[] library, Book book) {
