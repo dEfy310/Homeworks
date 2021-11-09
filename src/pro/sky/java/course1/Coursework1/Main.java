@@ -15,23 +15,25 @@ public class Main {
         workersList.addNewEmployee(employee3);
         workersList.addNewEmployee(employee4);
         workersList.addNewEmployee(employee5);
+        System.out.println("");
         workersList.printEmployees();
         System.out.println("\n");
-        System.out.println("Общие затраты на зарплату " + workersList.generalSalary());
-        System.out.println("Наименьшая зарплата у " + workersList.minimalSalary());
-        System.out.println("Наибольшая зарплата у " + workersList.maximalSalary());
-        System.out.println("Средняя зарплата " + workersList.averageSalary());
+        System.out.println("Общие затраты на зарплату " + workersList.calculateTotalSalary());
+        System.out.println("Наименьшая зарплата у " + workersList.findMinimalSalary());
+        System.out.println("Наибольшая зарплата у " + workersList.findMaximalSalary());
+        System.out.println("Средняя зарплата " + workersList.calculateAverageSalary());
         workersList.printEmployeeList();
-        workersList.salaryIndexing(5);
-        System.out.println("Зарплаты после индексирования" + workersList.generalSalary());
-        System.out.println("В данном отделе наименьшая зарплата у " + workersList.departmentMinSalary(2));
-        System.out.println("В данном отделе наибольшая зарплата у " + workersList.departmentMaxSalary(2));
-        System.out.println("Средняя зарпалта по отделу = " + workersList.averageDepartmentSalary(2));
-        workersList.departmentSalaryIndexing(2, 7);
+        workersList.indexSalary(5);
+        System.out.println("Зарплаты после индексирования" + workersList.calculateTotalSalary());
+        System.out.println("В данном отделе наименьшая зарплата у " + workersList.findDepartmentMinSalary(2));
+        System.out.println("В данном отделе наибольшая зарплата у " + workersList.findDepartmentMaxSalary(2));
+        System.out.println("Средняя зарпалта по отделу = " + workersList.calculateAverageDepartmentSalary(2));
+        workersList.indexDepartmentSalary(2, 7);
         workersList.printDepartmentEmployees(2);
-        workersList.employeesThatHaveSalaryLessThan(141000);
-        workersList.employeesThatHaveSalaryMoreThan(141000);
-        workersList.editEmployee("Alexey", "Navalniy", "Anatolevich", 124756.1, 4);
+        workersList.findEmployeesThatHaveSalaryLessThan(141000);
+        workersList.findEmployeesThatHaveSalaryMoreThan(141000);
+        workersList.editEmployeeSalary("Alexey", "Navalniy", "Anatolevich", 121204.7);
+        workersList.editEmployeeDepartment("Alexey", "Navalniy", "Anatolevich", 4);
         workersList.printEmployeesInDepartment();
     }
 }

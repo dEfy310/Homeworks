@@ -7,8 +7,8 @@ public class Employee  {
     private final String lastName;
     private double salary;
     private int department;
-    public static int counter = 0;
-    public int id;
+    private static int counter = 0;
+    private final int id;
 
     public Employee(String firstName, String middleName, String lastName, double salary, int department ) {
         this.firstName = firstName;
@@ -39,10 +39,6 @@ public class Employee  {
         return department;
     }
 
-    public static int getCounter() {
-        return counter;
-    }
-
     public int getId() {
         return id;
     }
@@ -58,7 +54,7 @@ public class Employee  {
     @Override
     public String toString() {
         return "Сотрудник " +
-                " Имя: " + firstName + '\'' +
+                " Имя: " + firstName +
                 " Фамилия: " + middleName + '\'' +
                 " Отчество: " + lastName + '\'' +
                 " Зарплата: " + salary +
