@@ -135,7 +135,7 @@ public class EmployeeBook {
         for (Employee employee : employeesList) {
             if (employee != null && employee.getDepartment() == department) {
                 if (employee != null) {
-                    System.out.print("\n" + employee.getFirstName() + " " + employee.getMiddleName() + " " + employee.getLastName() + "Зарплата: ");
+                    System.out.print(employee.getFirstName() + " " + employee.getMiddleName() + " " + employee.getLastName() + "Зарплата: ");
                     System.out.print(employee.getSalary() + " Id: ");
                     System.out.println(employee.getId() + "\n");
                 }
